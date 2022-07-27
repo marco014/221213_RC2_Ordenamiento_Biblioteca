@@ -25,13 +25,18 @@ public class Biblioteca {
     }
 
     private void vizualizarLibro(String categoria) {
+        boolean bandera = false;
         System.out.println("Libro(s) encontrado(s)");
         System.out.println("Informacion");
         for (int i=0; i<listaLibro.length; i++){
             if(categoria.equals(listaLibro[i].getCategoria())){
+                bandera=true;
                 System.out.println("Nombre: " + listaLibro[i].getNombre());
                 System.out.println("Id: " + listaLibro[i].getId());
             }
+        }
+        if (!bandera){
+            System.out.println("Categoria no registrada o escriba correctamente la categoria");
         }
     }
 
